@@ -21,8 +21,10 @@ with open(csvpath, newline='') as csvfile:
     #Loop through csv
     for row in csvreader:
 
-        #Add each Profit/Loss value to the list
+        #Count the months
         date.append(row[0])
+
+        #Add each Profit/Loss value to the list
         prof_loss.append(int(row[1]))
    
 #Determine the length of the date list to find the number of months
@@ -46,12 +48,21 @@ decrease_position = prof_loss.index(decrease)
 decrease_day = date[decrease_position]
 
 #Print to terminal
-summary = f'Total Months:{tot_months}\nTotal Profit/Losses: ${total_pl}\nAverage Profit/Losses: ${average}\nGreatest Increase in Revenue:{increase_day} ${increase}\nGreatest Decrease in Revenue:{decrease_day} ${decrease}'
-print(summary)
+print('Financial Analysis')
+print('------------------------------')
+print(f'Total Months:{tot_months}')
+print(f'Total Profit/Losses: ${total_pl}')
+print(f'Greatest Increase in Revenue:{increase_day} ${increase}')
+print(f'Greatest Decrease in Revenue:{decrease_day} ${decrease}')
 
-#create and print to text file
+#Create and print to text file
 fh = open('budget.txt', 'w')
 
-fh.write(summary)
+fh.write('Financial Analysis\n')
+fh.write('------------------------------\n')
+fh.write(f'Total Months:{tot_months}\n')
+fh.write(f'Total Profit/Losses: ${total_pl}\n')
+fh.write(f'Greatest Increase in Revenue:{increase_day} ${increase}\n')
+fh.write(f'Greatest Decrease in Revenue:{decrease_day} ${decrease}')
 
 fh.close()
