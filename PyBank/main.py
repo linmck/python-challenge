@@ -26,32 +26,38 @@ with open(csvpath, newline='') as csvfile:
 
         #Add each Profit/Loss value to the list
         prof_loss.append(int(row[1]))
-   
+
 #Determine the length of the date list to find the number of months
 tot_months = len(date)
 
 #Sum up the list of oto get the total
-total_pl = sum(prof_loss)
+tot_prof_loss = sum(prof_loss)
+
+#Create variable to hold list of Changes captured with a for loop
+changes = [prof_loss[i+1] - prof_loss[i] for i in range(len(prof_loss)-1)] 
+tot_changes = sum(changes)
+num_changes = len(changes)
 
 #Calculate the average Profit/Losses
-average = total_pl / tot_months
+average = tot_changes / num_changes
 average = str(round(average, 2))
 
 # #Find the greatest increase of prof_loss list
-increase = max(prof_loss)
-increase_position = prof_loss.index(increase)
-increase_day = date[increase_position]
+increase = max(changes)
+increase_position = changes.index(increase)
+increase_day = date[(increase_position)+1]
 
 #Find the greatest decrease of prof_loss list
-decrease = min(prof_loss)
-decrease_position = prof_loss.index(decrease)
-decrease_day = date[decrease_position]
+decrease = min(changes)
+decrease_position = changes.index(decrease)
+decrease_day = date[(decrease_position)+1]
 
 #Print to terminal
 print('Financial Analysis')
 print('------------------------------')
 print(f'Total Months:{tot_months}')
-print(f'Total Profit/Losses: ${total_pl}')
+print(f'Total Profit/Losses: ${tot_prof_loss}')
+print(f'Average Profit/Loss Change: ${average}')
 print(f'Greatest Increase in Revenue:{increase_day} ${increase}')
 print(f'Greatest Decrease in Revenue:{decrease_day} ${decrease}')
 
@@ -61,7 +67,8 @@ fh = open('budget.txt', 'w')
 fh.write('Financial Analysis\n')
 fh.write('------------------------------\n')
 fh.write(f'Total Months:{tot_months}\n')
-fh.write(f'Total Profit/Losses: ${total_pl}\n')
+fh.write(f'Total Profit/Losses: ${tot_prof_loss}\n')
+fh.write(f'Average Profit/Loss Change: ${average}\n')
 fh.write(f'Greatest Increase in Revenue:{increase_day} ${increase}\n')
 fh.write(f'Greatest Decrease in Revenue:{decrease_day} ${decrease}')
 
