@@ -76,7 +76,7 @@ print(f'Winner: {winner}')
 print('------------------------------')
 
 #Create and print to text file
-election_results = os.path.join('Results', 'election_results.csv')
+election_results = os.path.join('Results', 'election_results.txt')
 fh = open(election_results, 'w')
 
 fh.write('Election Results\n')
