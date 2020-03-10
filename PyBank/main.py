@@ -55,21 +55,21 @@ decrease_day = date[(decrease_position)+1]
 #Print to terminal
 print('Financial Analysis')
 print('------------------------------')
-print(f'Total Months:{tot_months}')
+print(f'Total Months: {tot_months}')
 print(f'Total Profit/Losses: ${tot_prof_loss}')
 print(f'Average Profit/Loss Change: ${average}')
-print(f'Greatest Increase in Revenue:{increase_day} ${increase}')
-print(f'Greatest Decrease in Revenue:{decrease_day} ${decrease}')
+print(f'Greatest Increase in Revenue: {increase_day} ${increase}')
+print(f'Greatest Decrease in Revenue: {decrease_day} ${decrease}')
 
 #Create and print to text file
 fh = open('budget.txt', 'w')
 
 fh.write('Financial Analysis\n')
 fh.write('------------------------------\n')
-fh.write(f'Total Months:{tot_months}\n')
+fh.write(f'Total Months: {tot_months}\n')
 fh.write(f'Total Profit/Losses: ${tot_prof_loss}\n')
 fh.write(f'Average Profit/Loss Change: ${average}\n')
-fh.write(f'Greatest Increase in Revenue:{increase_day} ${increase}\n')
-fh.write(f'Greatest Decrease in Revenue:{decrease_day} ${decrease}')
+fh.write(f'Greatest Increase in Revenue: {increase_day} ${increase}\n')
+fh.write(f'Greatest Decrease in Revenue: {decrease_day} ${decrease}')
 
 fh.close()
