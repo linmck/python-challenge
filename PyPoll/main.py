@@ -12,10 +12,10 @@ li = []
 otooley = []
 
 #Open csv
-with open(election_data_path, newline='') as csvfile:
+with open(election_data_path, newline='') as election_file:
 
     #Specify csv delimiter and variable
-    csvreader = csv.reader(csvfile, delimiter=',')
+    csvreader = csv.reader(election_file, delimiter=',')
 
     #Skip header
     header = next(csvreader)
