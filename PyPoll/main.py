@@ -3,7 +3,7 @@ import os
 import csv
 
 #Define path to csv
-csvpath = os.path.join('Resources', 'election_data.csv')
+election_data_path = os.path.join('Resources', 'election_data.csv')
 
 votes = []
 khan = []
@@ -12,7 +12,7 @@ li = []
 otooley = []
 
 #Open csv
-with open(csvpath, newline='') as csvfile:
+with open(election_data_path, newline='') as csvfile:
 
     #Specify csv delimiter and variable
     csvreader = csv.reader(csvfile, delimiter=',')
