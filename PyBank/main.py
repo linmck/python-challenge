@@ -3,14 +3,14 @@ import os
 import csv
 
 #Define path to csv
-csvpath = os.path.join('Resources', 'budget_data.csv')
+budget_path = os.path.join('Resources', 'budget_data.csv')
 
 #Create variable for holding csv columns as lists
 date = []
 prof_loss = []
 
 #Open csv
-with open(csvpath, newline='') as csvfile:
+with open(budget_path, newline='') as csvfile:
 
     #Specify csv delimiter and variable
     csvreader = csv.reader(csvfile, delimiter=',')
