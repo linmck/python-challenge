@@ -10,10 +10,10 @@ date = []
 prof_loss = []
 
 #Open csv
-with open(budget_path, newline='') as csvfile:
+with open(budget_path, newline='') as budget_file:
 
     #Specify csv delimiter and variable
-    csvreader = csv.reader(csvfile, delimiter=',')
+    csvreader = csv.reader(budget_file, delimiter=',')
 
     #Skip header
     header = next(csvreader)
