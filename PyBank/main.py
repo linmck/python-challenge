@@ -62,7 +62,8 @@ print(f'Greatest Increase in Revenue: {increase_day} ${increase}')
 print(f'Greatest Decrease in Revenue: {decrease_day} ${decrease}')
 
 #Create and print to text file
-fh = open('budget.txt', 'w')
+profit_loses = os.path.join('Results', 'profit_loses.txt')
+fh = open(profit_loses, 'w')
 
 fh.write('Financial Analysis\n')
 fh.write('------------------------------\n')
